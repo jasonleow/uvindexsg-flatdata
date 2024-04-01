@@ -6,7 +6,7 @@ on:
       - .github/workflows/flat.yml # Only run a new workflow every time this file (flat.yaml) file changes
   workflow_dispatch: # Required even though this is currently empty
   schedule:
-    - cron: '*/5 * * * *' # Run this workflow every 5 minutes
+    - cron: '*/5 7-19 * * *' # Run this workflow every 5 minutes from 7am to 7pm
 
 jobs:
   scheduled:
@@ -25,4 +25,4 @@ jobs:
         uses: githubocto/flat@v3
         with:
           http_url: https://www.nea.gov.sg/api/ultraviolet/getall # The data to fetch every 5 minutes
-          downloaded_filename: uvindex-every-15min.json # The http_url gets saved and renamed in our repository as btc-price.json
+          downloaded_filename: uvindex-every-15min.json # The http_url gets saved and renamed in our repository as uvindex-every-15min.json
